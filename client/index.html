@@ -3,11 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Evernote Clone</title>
+    <link rel="stylesheet" href="./index.css">
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
 
-    <!-- ADD YOUR HTML HERE -->
+    <div id="list-panel">
+      <h1> Flatiron School's Notes </h1>
+  		<ul id="list">
 
+  		</ul>
+      <h2>Create New Note: </h2>
+      <form id="new-form" method="post">
+        Title: <br><input id="new-note-title" type="text" name="title" value="" ><br>
+        Body: <br><input id="new-note-body" type="text" name="body" value="" style="height:100px;width:250px"><br>
+        <input type="submit" value="Submit">
+      </form>
+  	</div>
+  	<div id="show-panel">
+        <h2> Welcome to your Notes! </h2>
+        <p> Click to the list on your left to view each note individually or search the body of your notes below:</p>
+        <form id="search-form">
+          <input type="text" placeholder="Search..." name="search" value="">
+          <input type="submit" value="Search">
+        </form>
+      <div id="note">
+      </div><br><br>
+      <div>
+        <form id="edit-form" action="index.html" method="patch" style="display:none">
+          Title: <br><input id="note-title" type="text" name="title" value="" ><br>
+          Body: <br><input id="note-body" type="text" name="body" value="" style="height:220px;width:400px"><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <!-- ADD YOUR HTML HERE -->
   </body>
 </html>
