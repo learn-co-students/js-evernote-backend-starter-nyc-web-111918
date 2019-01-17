@@ -1,0 +1,16 @@
+body {
+	display: grid;
+	grid-template-columns: 4fr 8fr
+}
+
+#new-note-form {
+	visibility: hidden;
+}
+
+#edit-note-form {
+	visibility: hidden;
+}
+
+li {
+	text-decoration: none;
+}
