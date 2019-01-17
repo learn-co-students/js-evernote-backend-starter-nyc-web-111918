@@ -4,10 +4,22 @@
     <meta charset="utf-8">
     <title>Evernote Clone</title>
     <script src="src/index.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="src/index.css">
   </head>
   <body>
-
-    <!-- ADD YOUR HTML HERE -->
-
+    <div id="navbar" class="sidenav">
+      <button id="create-note-btn" data-action="create">CREATE NOTE</button>
+    </div>
+    <div id="show-note-area" class="main">
+    </div>
+    <form id="note-form" class="main" action="index.html" method="post" hidden=true>
+      <label for="new-title">New Title</label>
+      <input id="title-input" type="text" placeholder="Title"><br>
+      <label for="new-body">New Text</label>
+      <textarea id="body-input" rows="4" cols="50" placeholder="Body"></textarea>
+      <button>Submit</button>
+    </form>
   </body>
 </html>
