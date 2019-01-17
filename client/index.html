@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Evernote Clone</title>
+    <link rel="stylesheet" href="src/index.css">
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
+    <div class="main-container">
+      <div id="note-preview-container">
+        <ul>
 
-    <!-- ADD YOUR HTML HERE -->
+        </ul>
+      </div>
 
+      <div class="right-container">
+        <div class="container">
+          <form id="1" class="add-note-form" style="">
+            <h3>Create a Note</h3>
+            <input id="input-title" type="text" name="name" value="" placeholder="Enter a title..." class="input-text">
+            <br>
+            <textarea style="margin: 0px; height: 102px; width: 672px;" id="input-body" type="textarea" name="body" value="" placeholder="Enter a note description..." class="input-text"></textarea>
+            <br>
+            <input id="1" type="submit" name="submit" value="Create New Note" class="submit">
+          </form>
+        </div>
+
+        <div id="note-show-container">
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
