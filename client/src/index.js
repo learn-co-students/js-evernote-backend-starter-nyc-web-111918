@@ -1,8 +1,14 @@
 let notesArray = []
-
 document.addEventListener('DOMContentLoaded', () => {
+  /****************************** API BASE URL ********************************/
+const API_ENDPOINT = 'http://localhost:3000/api/v1'
 
-//***********Constants******************//
+/****************************** FETCH HEADERS ********************************/
+const HEADERS = {
+  'Content-Type': 'application/json',
+  Accept: 'application/json'
+}
+//*********** CONSTANTS ******************//
   const sideNav = document.querySelector(".sidenav")
   const main = document.querySelector(".main")
   const noteList = document.querySelector("[data-list-id]")
@@ -19,20 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //*************** Fetch User **************/
   function renderNavBar(){
-    fetch('http://localhost:3000/api/v1/users/1', {
+    fetch(`${API_ENDPOINT}/users/1`, {
       method: "GET",
-      headers:{
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-      }
+      headers: HEADERS
     })//end of fetch
     .then((res) =>{
       return res.json()
     })//end of first then
     .then((user)=>{
       sideNav.innerHTML = `<h1>${user.name}</h1>
-      <button data-button-id="create" data-user-id=${user.id}>Create a New Note!</button>`
-      //add a create note button
+      <button id="create-button" data-button-id="create" data-user-id=${user.id}>Create a New Note!</button>`
       notesArray = user.notes
       sideNav.innerHTML+= `<ul data-id-note-list=${user.id}>
         ${grabNoteTitles(notesArray)}
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `
   }//end of display note details
 
-//******************* Event Listeners ******************
+//***************************** EVENT LISTENERS *******************************
 // Side Nav Bar event listener for create button and titles displayed
   sideNav.addEventListener("click", (e)=>{
 
@@ -88,12 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const newBody = inputCreateBody.value
 
     // post to db
-    fetch('http://localhost:3000//api/v1/notes', {
+    fetch(`${API_ENDPOINT}/notes`, {
       method: 'POST',
-      headers:{
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-      },
+      headers: HEADERS,
       body: JSON.stringify({
         title: newTitle,
         body: newBody,
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //show the edit form
       editNoteForm.style.display = "block";
       //get the note you want to edit
-      fetch(`http://localhost:3000/api/v1/notes/${e.target.dataset.noteId}`, {
+      fetch(`${API_ENDPOINT}/notes/${e.target.dataset.noteId}`, {
           method: "GET"
       })
       .then((res)=>{
@@ -142,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const confirmed = confirm("Are you sure you want to delete this note?")
       if (confirmed === true){
-        fetch(`http://localhost:3000/api/v1/notes/${e.target.dataset.noteId}`,{
+        fetch(`${API_ENDPOINT}/notes/${e.target.dataset.noteId}`,{
           method: "DELETE"
         })//end of fetch
-        //***** have to remove it from the dom
+        //remove it from the dom
         noteInfo.innerHTML = ""
         listElementofNote.remove()
       }// end of if "ok"
@@ -160,12 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const editedTitle = inputEditTitle.value
     const editedBody = inputEditBody.value
 
-    fetch(`http://localhost:3000/api/v1/notes/${e.target.dataset.id}`, {
+    fetch(`${API_ENDPOINT}/notes/${e.target.dataset.id}`, {
       method: 'PATCH',
-      headers:{
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-      },
+      headers: HEADERS,
       body: JSON.stringify({
         title: editedTitle,
         body: editedBody

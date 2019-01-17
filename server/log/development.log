@@ -2637,3 +2637,182 @@ Processing by Api::V1::UsersController#show as JSON
 Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:05:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.96ms)
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:07:43 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.23ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/notes/3" for 127.0.0.1 at 2019-01-17 17:07:45 -0500
+Processing by Api::V1::NotesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (4.54ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/v1/notes/3" for 127.0.0.1 at 2019-01-17 17:07:54 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"title"=>"Cupcake", "body"=>"I love cake jelly marzipan brownie chocolate bar icing. Dragée donut cheesecake liquorice lemon drops jelly beans I love halvah. Marzipan ice cream I love marzipan I love fruitcake. Caramels I love lollipop cookie cupcake. Gingerbread I love lollipop. Bear claw I love tart. Carrot cake jujubes dessert.\n\nCandy canes pudding soufflé I love ice cream caramels. Candy brownie brownie soufflé I love muffin biscuit tootsie roll dragée. Oat cake I love macaroon oat cake I love. Gummi bears candy canes toffee I love apple pie I love chocolate bar cotton candy. Oat cake halvah tiramisu jelly beans chocolate cake. Muffin gummies cheesecake. Sesame snaps tootsie roll toffee cake toffee macaroon candy brownie. Apple pie cheesecake toffee brownie jelly-o bear claw. I love muffin topping gummies I love. Tart donut I love chocolate jelly beans muffin I love cupcake.\n\nSoufflé jelly cookie. Carrot cake I love marzipan I love liquorice sweet. Macaroon I love cake cheesecake danish. I love sugar plum candy I love apple pie chupa chups cupcake dessert. Halvah jelly-o gingerbread lollipop fruitcake chocolate cake. Toffee jelly jelly-o marshmallow chocolate bar biscuit chocolate cake. Powder sweet cheesecake I love sweet. Jelly beans jelly beans chocolate cake biscuit cake cheesecake.\n\nJelly beans cake lollipop. Fruitcake soufflé I love cupcake. Sweet marzipan pastry chupa chups I love. Lollipop tootsie roll tart I love cake soufflé I love topping. Apple pie pastry dragée. Bear claw jelly I love sweet tart carrot cake brownie wafer pastry. Danish I love I love lemon drops. Fruitcake sesame snaps donut apple pie caramels donut jujubes chocolate cake macaroon.\n\nChocolate bar cookie tootsie roll dragée dessert. Macaroon carrot cake marzipan donut candy canes cake bear claw chocolate bar. Soufflé gummi bears icing bear claw sesame snaps brownie ice cream cookie. Danish I love brownie soufflé I love tootsie roll cupcake sesame snaps bear claw. Fruitcake I love I love I love marzipan. Carrot cake sweet roll caramels I love pastry. Pastry topping cake sesame snaps sweet roll. Sweet carrot cake caramels ice cream I love brownie pie toffee.", "id"=>"3", "note"=>{"title"=>"Cupcake", "body"=>"I love cake jelly marzipan brownie chocolate bar icing. Dragée donut cheesecake liquorice lemon drops jelly beans I love halvah. Marzipan ice cream I love marzipan I love fruitcake. Caramels I love lollipop cookie cupcake. Gingerbread I love lollipop. Bear claw I love tart. Carrot cake jujubes dessert.\n\nCandy canes pudding soufflé I love ice cream caramels. Candy brownie brownie soufflé I love muffin biscuit tootsie roll dragée. Oat cake I love macaroon oat cake I love. Gummi bears candy canes toffee I love apple pie I love chocolate bar cotton candy. Oat cake halvah tiramisu jelly beans chocolate cake. Muffin gummies cheesecake. Sesame snaps tootsie roll toffee cake toffee macaroon candy brownie. Apple pie cheesecake toffee brownie jelly-o bear claw. I love muffin topping gummies I love. Tart donut I love chocolate jelly beans muffin I love cupcake.\n\nSoufflé jelly cookie. Carrot cake I love marzipan I love liquorice sweet. Macaroon I love cake cheesecake danish. I love sugar plum candy I love apple pie chupa chups cupcake dessert. Halvah jelly-o gingerbread lollipop fruitcake chocolate cake. Toffee jelly jelly-o marshmallow chocolate bar biscuit chocolate cake. Powder sweet cheesecake I love sweet. Jelly beans jelly beans chocolate cake biscuit cake cheesecake.\n\nJelly beans cake lollipop. Fruitcake soufflé I love cupcake. Sweet marzipan pastry chupa chups I love. Lollipop tootsie roll tart I love cake soufflé I love topping. Apple pie pastry dragée. Bear claw jelly I love sweet tart carrot cake brownie wafer pastry. Danish I love I love lemon drops. Fruitcake sesame snaps donut apple pie caramels donut jujubes chocolate cake macaroon.\n\nChocolate bar cookie tootsie roll dragée dessert. Macaroon carrot cake marzipan donut candy canes cake bear claw chocolate bar. Soufflé gummi bears icing bear claw sesame snaps brownie ice cream cookie. Danish I love brownie soufflé I love tootsie roll cupcake sesame snaps bear claw. Fruitcake I love I love I love marzipan. Carrot cake sweet roll caramels I love pastry. Pastry topping cake sesame snaps sweet roll. Sweet carrot cake caramels ice cream I love brownie pie toffee."}}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: id, note
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "notes" SET "body" = ?, "title" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["body", "I love cake jelly marzipan brownie chocolate bar icing. Dragée donut cheesecake liquorice lemon drops jelly beans I love halvah. Marzipan ice cream I love marzipan I love fruitcake. Caramels I love lollipop cookie cupcake. Gingerbread I love lollipop. Bear claw I love tart. Carrot cake jujubes dessert.\n\nCandy canes pudding soufflé I love ice cream caramels. Candy brownie brownie soufflé I love muffin biscuit tootsie roll dragée. Oat cake I love macaroon oat cake I love. Gummi bears candy canes toffee I love apple pie I love chocolate bar cotton candy. Oat cake halvah tiramisu jelly beans chocolate cake. Muffin gummies cheesecake. Sesame snaps tootsie roll toffee cake toffee macaroon candy brownie. Apple pie cheesecake toffee brownie jelly-o bear claw. I love muffin topping gummies I love. Tart donut I love chocolate jelly beans muffin I love cupcake.\n\nSoufflé jelly cookie. Carrot cake I love marzipan I love liquorice sweet. Macaroon I love cake cheesecake danish. I love sugar plum candy I love apple pie chupa chups cupcake dessert. Halvah jelly-o gingerbread lollipop fruitcake chocolate cake. Toffee jelly jelly-o marshmallow chocolate bar biscuit chocolate cake. Powder sweet cheesecake I love sweet. Jelly beans jelly beans chocolate cake biscuit cake cheesecake.\n\nJelly beans cake lollipop. Fruitcake soufflé I love cupcake. Sweet marzipan pastry chupa chups I love. Lollipop tootsie roll tart I love cake soufflé I love topping. Apple pie pastry dragée. Bear claw jelly I love sweet tart carrot cake brownie wafer pastry. Danish I love I love lemon drops. Fruitcake sesame snaps donut apple pie caramels donut jujubes chocolate cake macaroon.\n\nChocolate bar cookie tootsie roll dragée dessert. Macaroon carrot cake marzipan donut candy canes cake bear claw chocolate bar. Soufflé gummi bears icing bear claw sesame snaps brownie ice cream cookie. Danish I love brownie soufflé I love tootsie roll cupcake sesame snaps bear claw. Fruitcake I love I love I love marzipan. Carrot cake sweet roll caramels I love pastry. Pastry topping cake sesame snaps sweet roll. Sweet carrot cake caramels ice cream I love brownie pie toffee."], ["title", "Cupcake"], ["updated_at", "2019-01-17 22:07:54.210047"], ["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (2.21ms)
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:07:54 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.54ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/notes" for 127.0.0.1 at 2019-01-17 17:08:14 -0500
+Processing by Api::V1::NotesController#create as JSON
+  Parameters: {"title"=>"woop woop", "body"=>"boom boom", "user_id"=>"1", "note"=>{"user_id"=>"1", "title"=>"woop woop", "body"=>"boom boom"}}
+Unpermitted parameter: note
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "woop woop"], ["body", "boom boom"], ["created_at", "2019-01-17 22:08:14.738238"], ["updated_at", "2019-01-17 22:08:14.738238"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered NoteSerializer with ActiveModelSerializers::Adapter::Attributes (6.78ms)
+Completed 201 Created in 12ms (Views: 7.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:08:14 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.3ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:14:09 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.03ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:14:14 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.23ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:14:29 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.27ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:14:36 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.03ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:16:22 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.01ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:16:41 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:17:01 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.62ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:17:02 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.69ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:18:55 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.08ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:19:04 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.35ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:19:09 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.72ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2019-01-17 17:19:27 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.49ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
