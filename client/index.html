@@ -1,13 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav h1 {
+      padding: 6px 6px 6px 32px;
+      text-decoration: none;
+      /* font-size: 25px; */
+      color: #818181;
+      display: block;
+    }
+
+
+    .sidenav ul li {
+      padding: 6px 6px 6px 32px;
+      text-decoration: none;
+      /* font-size: 25px; */
+      color: #818181;
+      display: block;
+    }
+
+    .sidenav ul li:hover {
+      color: #f1f1f1;
+    }
+
+    .main {
+      margin-left: 200px; /* Same as the width of the sidenav */
+    }
+
+    .main h1{
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    </style>
+
     <meta charset="utf-8">
     <title>Evernote Clone</title>
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
 
-    <!-- ADD YOUR HTML HERE -->
+    <div class="sidenav">
 
+    </div>
+
+    <div class="main">
+      <form class="create-note-form" data-id = "" data-user-id="" style="display: none;">
+        <h3>Create a New Note</h3>
+
+        <input type="text" id="inputCreateTitle" name="name" value="" placeholder="Title goes here" class="input-text" >
+        <br>
+        <textarea  rows="10" cols="50" id="inputCreateBody" name="body" value="" placeholder="body goes here" class="input-text"></textarea>
+        <br>
+        <input type="submit" name="submit" value="Create" class="submit">
+      </form>
+      <div class="note-info">
+
+        </div>
+
+
+        <form class="edit-note-form" data-id = "" style="display: none;">
+          <h3>Edit Your Note</h3>
+
+          <input type="text" id="inputEditTitle" name="name" value="" placeholder="Title goes here" class="input-text" >
+          <br>
+          <textarea rows="10" cols="50" id="inputEditBody" name="body" value="" placeholder="body goes here" class="input-text"></textarea>
+          <br>
+          <input type="submit" name="submit" value="Save" class="submit">
+        </form>
+
+    </div>
   </body>
 </html>

@@ -1,0 +1,8 @@
+.edit-note-form{
+  display: none;
+  visibility: hidden;
+}
+
+.textarea{
+  height: 500px;
+}
