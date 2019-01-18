@@ -8,11 +8,20 @@
   </head>
   <body>
     <div class="">
-
+      <img src="http://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/1024/22246-elephant-icon.png" width="64%">
     <h1 id="username"></h1>
   </div>
   <div class="">
-    <button type="button" id="newbutton" name="button">New Note</button>
+    <form action="" id="new-note-form">
+      <p>Add a new Note:</p>
+      Title:<br>
+      <input type="text" name="firstname" id="new-title-field">
+      <br>
+      Note:<br>
+      <textarea placeholder="Add note here.."rows="4" cols="50"id="new-note-field"></textarea>
+      <br><br>
+      <input id="new-submit" type="submit" value="Add Note">
+    </form>
 
   </div>
     <div id="notes">
